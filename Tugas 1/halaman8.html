@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Mengenal Tag Form</title>
+  </head>
+  <body>
+    <form name="form1" method="post" action="aksi.php" id="form1">
+      <fieldset>
+        <legend>Form</legend>
+        Nama Anda : <input type="text" name="nama" /><br />
+        Email Anda : <input type="text" name="nama" /><br />
+        <label for="kendaraan">Pilih kendaraan ke kampus :</label>
+        <select name="kendaraan" id="kendaraan">
+          <optgroup label="Kendaraan Roda 2">
+            <option value="motor">Motor</option>
+            <option value="sepeda">Sepeda</option>
+          </optgroup>
+          <optgroup label="Kendaraan Roda 4">
+            <option value="mobil">Mobil</option>
+          </optgroup></select
+        ><br />
+        Alamat : <textarea name="komentar" cols="30" rows="5"></textarea><br />
+        <button type="submit" form="form1" value="Submit">Submit</button>
+        <input type="reset" name="Submit2" value="Reset" />
+      </fieldset>
+    </form>
+  </body>
+</html>
