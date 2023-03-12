@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-        margin: 0;
+        *{
+            margin: 0;
         }
         .container {
             width: 100%;
@@ -19,8 +19,7 @@
             align-items: center;
         }
         h1{
-            margin: 0;
-            padding:20px;
+            margin: 20px;
         }
         table, th, td{
             border: 1px solid black;
@@ -36,20 +35,16 @@
 <body>
 <?php 
 
-function connection() {
    $dbServer = 'localhost';
    $dbUser = 'root';
    $dbPass = '';
    $dbName = "classicmodels";
-
    $conn = mysqli_connect($dbServer, $dbUser, $dbPass);
-
    if(! $conn) {
-	die('Koneksi gagal: ' . mysqli_error());
+	die('Koneksi gagal');
    }
    mysqli_select_db($conn,$dbName);
-   return $conn;
-} ?>
+?>
 <div class="container">
 <h1>Tabel Employee : </h1>
 <table>
@@ -68,7 +63,7 @@ function connection() {
     <tbody>
         <?php 
         $query = "SELECT * FROM employees";
-        $result = mysqli_query(connection(),$query);
+        $result = mysqli_query($conn,$query);
         ?>
         <?php while($data = mysqli_fetch_array($result)): ?>
             <tr>
@@ -98,7 +93,7 @@ function connection() {
     <tbody>
         <?php 
         $query = "SELECT * FROM productlines";
-        $result = mysqli_query(connection(),$query);
+        $result = mysqli_query($conn,$query);
         ?>
         <?php while($data = mysqli_fetch_array($result)): ?>
             <tr>
