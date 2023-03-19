@@ -1,4 +1,6 @@
-<?php 
+<?php
+//Faiz Nur Budi
+//21081010113 
 function connection()
 {
    $dbServer = 'localhost';
