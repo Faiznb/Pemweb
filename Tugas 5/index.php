@@ -19,10 +19,9 @@ include "conn.php"
     </nav>
     <div class="container">
         <div class="header" id="customers">
-        <div class="text">Tabel Customer : </div>
-        <?php 
-            //mengecek apakah proses update dan delete sukses/gagal
-            if (@$_GET['status']!==NULL) {
+            <div class="text">Tabel Customer : </div>
+            <?php 
+            if ($_GET['status']!==NULL) {
               $status = $_GET['status'];
               if ($status=='ok1') {
                 echo '<div class="sukses">Data Customers berhasil di-update</div>';
@@ -38,7 +37,7 @@ include "conn.php"
               }
             }
            ?>
-        <a href= "insert.php?customer=1" class="tambah">Tambah Data</a>
+            <a href="insert.php?customer=1" class="tambah">Tambah Data</a>
         </div>
         <table>
             <thead>
@@ -79,8 +78,10 @@ include "conn.php"
                     <td><?php echo $data['country'];  ?></td>
                     <td><?php echo $data['salesRepEmployeeNumber'];  ?></td>
                     <td><?php echo $data['creditLimit'];  ?></td>
-                    <td> <a href=<?php echo "update.php?customerNumber=" . $data['customerNumber']; ?> class="update">UPDATE</a></td>
-                    <td> <a href=<?php echo "delete.php?customerNumber=" . $data['customerNumber']; ?> class="delete">DELETE</a></td>
+                    <td> <a href=<?php echo "update.php?customerNumber=" . $data['customerNumber']; ?>
+                            class="update">UPDATE</a></td>
+                    <td> <a href=<?php echo "delete.php?customerNumber=" . $data['customerNumber']; ?>
+                            class="delete">DELETE</a></td>
                 </tr>
                 <?php endwhile ?>
             </tbody>
@@ -88,10 +89,9 @@ include "conn.php"
 
 
         <div class="header" id="products">
-        <div class="text">Tabel Product : </div>
-        <?php 
-            //mengecek apakah proses update dan delete sukses/gagal
-            if (@$_GET['status']!==NULL) {
+            <div class="text">Tabel Product : </div>
+            <?php 
+            if ($_GET['status']!==NULL) {
               $status = $_GET['status'];
               if ($status=='ok2') {
                 echo '<div class="sukses">Data Product berhasil di-update</div>';
@@ -107,7 +107,7 @@ include "conn.php"
               }
             }
            ?>
-        <a href="insert.php?product=1" class="tambah">Tambah Data</a>
+            <a href="insert.php?product=1" class="tambah">Tambah Data</a>
         </div>
         <table>
             <thead>
@@ -140,8 +140,10 @@ include "conn.php"
                     <td><?php echo $data['quantityInStock'];  ?></td>
                     <td><?php echo $data['buyPrice'];  ?></td>
                     <td><?php echo $data['MSRP'];  ?></td>
-                    <td> <a href=<?php echo "update.php?productCode=" . $data['productCode']; ?> class="update">UPDATE</a></td>
-                    <td> <a href=<?php echo "delete.php?productCode=" . $data['productCode']; ?> class="delete">DELETE</a></td>
+                    <td> <a href=<?php echo "update.php?productCode=" . $data['productCode']; ?>
+                            class="update">UPDATE</a></td>
+                    <td> <a href=<?php echo "delete.php?productCode=" . $data['productCode']; ?>
+                            class="delete">DELETE</a></td>
                 </tr>
                 <?php endwhile ?>
             </tbody>
