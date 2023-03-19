@@ -1,7 +1,7 @@
 <?php
 //Faiz Nur Budi
 //21081010113 
-include "conn.php"
+include "conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +22,8 @@ include "conn.php"
     <div class="container">
         <div class="header" id="customers">
             <div class="text">Tabel Customer : </div>
-            <?php 
-            if ($_GET['status']!==NULL) {
+            <?php
+              if (@$_GET['status']!==NULL) {
               $status = $_GET['status'];
               if ($status=='ok1') {
                 echo '<div class="sukses">Data Customers berhasil di-update</div>';
@@ -38,6 +38,7 @@ include "conn.php"
                 echo '<div class="danger">Data Customers gagal di-tambahkan</div>';
               }
             }
+          
            ?>
             <a href="insert.php?customer=1" class="tambah">Tambah Data</a>
         </div>
@@ -93,7 +94,7 @@ include "conn.php"
         <div class="header" id="products">
             <div class="text">Tabel Product : </div>
             <?php 
-            if ($_GET['status']!==NULL) {
+            if (@$_GET['status']!==NULL) {
               $status = $_GET['status'];
               if ($status=='ok2') {
                 echo '<div class="sukses">Data Product berhasil di-update</div>';
