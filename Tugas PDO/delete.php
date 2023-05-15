@@ -34,6 +34,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     header('Location: index.php?status=' . $status  . '#productlines');
   }
+  if (isset($_GET['customerNumber'])) {
+    $customerNumber_upd = $_GET['customerNumber'];
+    $query = $conn->prepare("DELETE FROM customers WHERE customerNumber = :customerNumber");
+
+    $query->bindParam(':customerNumber', $customerNumber_upd);
+
+    if ($query->execute()) {
+      $status = 'ok3';
+    } else {
+      $status = 'err3';
+    }
+
+    header('Location: index.php?status=' . $status . '#customers');
+  }
+  if (isset($_GET['productCode'])) {
+    $productCode_upd = $_GET['productCode'];
+    $query = $conn->prepare("DELETE FROM products WHERE productCode = :productCode");
+    $query->bindParam(':productCode', $productCode_upd);
+
+    if ($query->execute()) {
+      $status = 'ok4';
+    } else {
+      $status = 'err4';
+    }
+
+    header('Location: index.php?status=' . $status . '#products');
+  }
 }
 
 ?>
